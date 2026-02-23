@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM WITH JAVASCRIPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Registration Form</h1>
+
+  <form id="myForm" onsubmit="return validateForm()">
+    <p id="errorMessage"></p>
+    <input type="text" id="fname" placeholder="Enter Your Full Name"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+    <input type="number" id="number" placeholder="Phone Number"><br><br>
+    <input type="date" id="DOB"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password"><br><br>
+    <input type="text" id="age" placeholder="Enter your Age"><br><br>
+    <select name="" id="state" placeholder="Select State">
+        <option value="">Select State</option>
+        <option value="">Lagos</option>
+        <option value="">Abia</option>
+        <option value="">Osun</option>
+        <option value="">Kwara</option>
+        <option value="">Rivers</option>
+        <option value="">Niger</option>
+        <option value="">Adamawa</option>
+        <option value="">Jigawa</option>
+        <option value="">Benue</option>
+        <option value="">Plateau</option>
+        <option value="">Akwa-Ibom</option>
+        <option value="">Anambra</option>
+        <option value="">Cross River</option>
+        <option value="">Delta</option>
+        <option value="">Ebonyi</option>
+        <option value="">Edo</option>
+        <option value="">Ekiti</option>
+        <option value="">Enugu</option>
+        <option value="">Gombe</option>
+        <option value="">Imo</option>
+        <option value="">Kogi</option>
+        <option value="">Zamfara</option>
+        <option value="">Bauchi</option>
+        <option value="">Bayelsa</option>
+        <option value="">Benue</option>
+        <option value="">Bornu</option>
+        <option value="">Kastina</option>
+        <option value="">Kano</option>
+        <option value="">Kebbi</option>
+        <option value="">Kaduna</option>
+        <option value="">Nasarawa</option>
+        <option value="">Sokoto</option>
+        <option value="">Taraba</option>
+        <option value="">Yobe</option>
+        <option value="">Other</option>     
+    </select>
+    <input type="file" id="file"><br><br>
+
+    <label>Gender:</label>
+    <label><input type="radio" name="gender" value="male">Male</label>
+    <label><input type="radio" name="gender" value="female">Female</label>
+    <label><input type="radio" name="gender" value="Other">Other</label><br><br>
+    <input type="checkbox" id="terms" name="terms"><label for="terms">I agree to the terms and conditions</label><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+    <script src="script.js"></script>
+</body>
+</html>
