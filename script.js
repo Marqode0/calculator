@@ -10,85 +10,95 @@ function validateForm(){
     let file = document.getElementById('file').value
     let gender = document.querySelector('input[name="gender"]:checked')
     let terms = document.getElementById('terms').checked
-    let errorMessage = document.getElementById('errorMessage')
 
-    errorMessage.innerHTML = '';
-    document.getElementById('errorMessage').style.color = 'red';
+    document.getElementById('fnameError').innerHTML = ''
+    document.getElementById('emailError').innerHTML = ''
+    document.getElementById('numberError').innerHTML = ''
+    document.getElementById('dobError').innerHTML = ''
+    document.getElementById('passwordError').innerHTML = ''
+    document.getElementById('confirmPasswordError').innerHTML = ''
+    document.getElementById('ageError').innerHTML = ''
+    document.getElementById('stateError').innerHTML = ''
+    document.getElementById('fileError').innerHTML = ''
+    document.getElementById('genderError').innerHTML = ''
+    document.getElementById('termsError').innerHTML = ''
 
-    if( name.length <= 5){
-        errorMessage.innerHTML = "Enter atleast 10 Characters"
+    
+
+    if( name.length < 10){
+        document.getElementById('fnameError').innerHTML = "Enter atleast 10 Characters"
         return false
     }
 
     if(!email.includes ("@") || !email.includes (".")){
-        errorMessage.innerHTML = "Enter a Valid Email"
+        document.getElementById('emailError').innerHTML = "Enter a Valid Email"
         return false
     }
 
    
-    if (!number.length == 11){
-        errorMessage.innerHTML = "Enter 11 digits number"
+    if (number.length !== 11){
+        document.getElementById('numberError').innerHTML = "Enter 11 digits number"
         return false}
         
     
     if (birth == ""){
-        errorMessage.innerHTML = "Input Your Date of Birth"
+        document.getElementById('dobError').innerHTML = "Input Your Date of Birth"
         return false
     }
 
     if (password == ""){
-        errorMessage.innerHTML = "Create a Password"
+        document.getElementById('passwordError').innerHTML = "Create a Password"
         return false
     } else if(password.length < 8){
-        errorMessage.innerHTML = "Password must be atleast 8 characters"
+        document.getElementById('passwordError').innerHTML = "Password must be atleast 8 characters"
         return false
     } else if(!/[!@#$%^&*]/.test(password)){
-    errorMessage.innerHTML = "Password must contain a special character"
+    document.getElementById('passwordError').innerHTML = "Password must contain a special character"
     return false
     } else if(!/[A-Z]/.test(password)){
-        errorMessage.innerHTML = "Password must contain an uppercase letter"
+        document.getElementById('passwordError').innerHTML = "Password must contain an uppercase letter"
         return false
     }
 
     if (confirm == ""){
-        errorMessage.innerHTML = "Confirm Your Password"
+        document.getElementById('confirmPasswordError').innerHTML = "Confirm Your Password"
         return false
     } else if (confirm !== password){
-        errorMessage.innerHTML = "Passwords do not match"
+        document.getElementById('confirmPasswordError').innerHTML = "Passwords do not match"
         return false
     }
 
     if (age == ""){
-        errorMessage.innerHTML = "Enter Your Age"
+        document.getElementById('ageError').innerHTML = "Enter Your Age"
         return false
     } else if (age < 18){
-        errorMessage.innerHTML = "You must be at least 18 years old"
+        document.getElementById('ageError').innerHTML = "You must be at least 18 years old"
         return false
     }
 
     if (state == ""){
-        errorMessage.innerHTML = "Select Your State"
+        document.getElementById('stateError').innerHTML = "Select Your State"
         return false
     }
 
     if (file == ""){
-        errorMessage.innerHTML = "Upload Your File"
+        document.getElementById('fileError').innerHTML = "Upload Your File"
         return false
     } else if (!file.endsWith('.pdf') && !file.endsWith('.docx') && !file.endsWith('.jpg') && !file.endsWith('.png')){
-        errorMessage.innerHTML = "File must be a PDF, DOCX, JPG, or PNG"
+        document.getElementById('fileError').innerHTML = "File must be a PDF, DOCX, JPG, or PNG"
         return false
-    } else if (file.size > 2 * 1024 * 1024){
-        errorMessage.innerHTML = "File size must be less than 2MB"
+    } else if(document.getElementById('file').files[0].size > 2 * 1024 * 1024){
+        document.getElementById('fileError').innerHTML = "File size must be less than 2MB"
         return false
     }
 
     if(!gender){
-        errorMessage.innerHTML = "please select a gender"
+        document.getElementById('genderError').innerHTML = "please select a gender"
         return false
     }
 
     if (!terms){
-        errorMessage.innerHTML = "You must agree to the terms and conditions"
+        document.getElementById('termsError').innerHTML = "You must agree to the terms and conditions"
         return false
     }
 

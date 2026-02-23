@@ -10,14 +10,43 @@
     <h1>Registration Form</h1>
 
   <form id="myForm" onsubmit="return validateForm()">
-    <p id="errorMessage"></p>
-    <input type="text" id="fname" placeholder="Enter Your Full Name"><br><br>
-    <input type="email" id="email" placeholder="Email"><br><br>
-    <input type="number" id="number" placeholder="Phone Number"><br><br>
-    <input type="date" id="DOB"><br><br>
-    <input type="password" id="password" placeholder="Password"><br><br>
-    <input type="password" id="confirmPassword" placeholder="Confirm Password"><br><br>
+    <div>
+    <input type="text" id="fname" placeholder="Enter Your Full Name"><br>
+    <span id="fnameError"></span>
+    </div>
+
+    <div>
+    <input type="email" id="email" placeholder="Email"><br>
+    <span id="emailError"></span>
+    </div>
+
+    <div>
+    <input type="number" id="number" placeholder="Phone Number"><br>
+    <span id="numberError"></span>
+    </div>
+
+    <div>
+      <label>Date of Birth</label>
+    <input type="date" id="DOB"><br>
+    <span id="dobError"></span>
+    </div>
+
+    <div>
+    <input type="password" id="password" placeholder="Password"><br>
+    <span id="passwordError"></span>
+    </div>
+
+    <div>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password"><br>
+    <span id="confirmPasswordError"></span>
+    </div>
+
+    <div>
     <input type="text" id="age" placeholder="Enter your Age"><br><br>
+    <span id="ageError"></span>
+    </div>
+
+    <div>
     <select name="" id="state" placeholder="Select State">
         <option value="">Select State</option>
         <option value="">Lagos</option>
@@ -56,13 +85,26 @@
         <option value="">Yobe</option>
         <option value="">Other</option>     
     </select>
-    <input type="file" id="file"><br><br>
+    <span id="stateError"></span>
+    </div>
 
+    <div>
+    <input type="file" id="file"><br>
+    <span id="fileError"></span>
+    </div>
+
+    <div>
     <label>Gender:</label>
     <label><input type="radio" name="gender" value="male">Male</label>
     <label><input type="radio" name="gender" value="female">Female</label>
-    <label><input type="radio" name="gender" value="Other">Other</label><br><br>
-    <input type="checkbox" id="terms" name="terms"><label for="terms">I agree to the terms and conditions</label><br><br>
+    <label><input type="radio" name="gender" value="Other">Other</label><br>
+    <span id="genderError"></span>
+    </div>
+
+    <div>
+    <input type="checkbox" id="terms" name="terms"><label for="terms">I agree to the terms and conditions</label><br>
+    <span id="termsError"></span>
+    </div>
     
     <button type="submit">Submit</button>
   </form>
